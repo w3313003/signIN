@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='jquery.min.js'></script>
+    <style>
+        @media screen and (min-width: 320px) {
+            html {
+                /*font-size: 100px!important;*/
+                font-size: 84.375px!important;
+            }
+        }
+        
+        @media screen and (min-width: 330px) {
+            html {
+                /*font-size: 103.125px!important;*/
+                font-size: 87.5px!important;
+            }
+        }
+        
+        @media screen and (min-width: 340px) {
+            html {
+                /*font-size: 106.25px!important;*/
+                font-size: 90.625px!important;
+            }
+        }
+        
+        @media screen and (min-width: 350px) {
+            html {
+                /*font-size: 109.375px!important;*/
+                font-size: 93.75px!important;
+            }
+        }
+        
+        @media screen and (min-width: 360px) {
+            html {
+                font-size: 96.875px!important;
+                /*font-size: 112.5px!important;*/
+            }
+        }
+        
+        @media screen and (min-width: 370px) {
+            html {
+                /*font-size: 115.625px!important;*/
+                font-size: 100px!important;
+            }
+        }
+        
+        @media screen and (min-width: 380px) {
+            html {
+                /*font-size: 118.75px!important;*/
+                font-size: 103.125px!important;
+            }
+        }
+        
+        @media screen and (min-width: 390px) {
+            html {
+                /*font-size: 121.875px!important;*/
+                font-size: 106.25px!important;
+            }
+        }
+        
+        @media screen and (min-width: 400px) {
+            html {
+                /*font-size: 125px!important;*/
+                font-size: 109.375px!important;
+            }
+        }
+        
+        @media screen and (min-width: 410px) {
+            html {
+                /*font-size: 128.125px!important;*/
+                font-size: 112.5px!important;
+            }
+        }
+        
+        @media screen and (min-width: 420px) {
+            html {
+                /*font-size: 131.25px!important;*/
+                font-size: 115.625px!important;
+            }
+        }
+        
+        @media screen and (min-width: 430px) {
+            html {
+                /*font-size: 134.375px!important;*/
+                font-size: 117.75px!important;
+            }
+        }
+        
+        @media screen and (min-width: 440px) {
+            html {
+                /*font-size: 137.5px!important;*/
+                font-size: 120.875px!important;
+            }
+        }
+        
+        @media screen and (min-width: 450px) {
+            html {
+                /*font-size: 140.625px!important;*/
+                font-size: 124px!important;
+            }
+        }
+        
+        @media screen and (min-width: 460px) {
+            html {
+                /*font-size: 143.75px!important;*/
+                font-size: 127.125px!important;
+            }
+        }
+        
+        @media screen and (min-width: 470px) {
+            html {
+                /*font-size: 146.875px!important;*/
+                font-size: 130.25px!important;
+            }
+        }
+        
+        @media screen and (min-width: 480px) {
+            html {
+                /*font-size: 150px!important;*/
+                font-size: 133.375px!important;
+            }
+        }
+        
+        @media screen and (min-width: 490px) {
+            html {
+                /*font-size: 153.125px!important;*/
+                font-size: 136.5px!important;
+            }
+        }
+        
+        @media screen and (min-width: 500px) {
+            html {
+                /*font-size: 156.25px!important;*/
+                font-size: 139.625px!important;
+            }
+        }
+        
+        @media screen and (min-width: 639px) {
+            html {
+                /*font-size: 200px!important;*/
+                font-size: 142.75px!important;
+            }
+        }
+        
+        @media screen and (min-width: 719px) {
+            html {
+                /*font-size: 225px!important;*/
+                font-size: 135.875px!important;
+            }
+        }
+        
+        @media screen and (max-width: 319px) {
+            html {
+                font-size: 84.375px!important;
+            }
+        }
+    </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: #8db580;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between
+        }
+        
+        .row:nth-child(2n) {
+            flex-direction: row-reverse;
+        }
+        
+        .bg-wrap {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .bg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .main,
+        .shadow-main {
+            width: 2.8rem;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 2.045rem;
+            font-size: 0.1rem;
+            z-index: 2;
+        }
+        
+        .shadow-main {
+            z-index: -1;
+        }
+        
+        .item-wrap {
+            width: 0.561rem;
+            height: .9rem;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .item {
+            text-align: center;
+            font-size: 0.1rem;
+            margin-top: 5px;
+            color: #8db580;
+        }
+        
+        .sign {
+            width: 90%;
+            margin: 0 auto;
+            height: 0.5rem;
+            background-color: #ffcc00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .normal-date {
+            font-size: 0.35rem;
+            color: #fff;
+        }
+        
+        .light {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scale(0.5);
+        }
+        
+        .triangle {
+            background-color: #ffcc00;
+            width: 0.1rem;
+            height: 0.1rem;
+            position: absolute;
+            left: 50%;
+            top: 0.5rem;
+            transform: translate(-50%, -50%) rotate(45deg);
+            z-index: -1;
+        }
+        
+        .mask {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .active {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            display: none;
+        }
+        
+        .active-days {
+            font-size: 0.2rem;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .active-sign {
+            width: 0.4rem;
+            height: 0.15rem;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background: #5acf53;
+            font-size: 0.11rem;
+            color: #fff;
+            border-radius: 5px;
+        }
+        
+        .shadow-main .item-wrap {
+            transition: all 1s;
+        }
+        
+        .flag {
+            font-size: 0.15rem;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-weight: 600;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        aside {
+            transition: all 1s;
+        }
+        
+        .aside-left {
+            position: absolute;
+            right: 0;
+        }
+        
+        .aside-right {
+            position: absolute;
+            left: 0;
+        }
+        
+        @media screen and (max-width: 320px) {
+            .item-wrap {
+                height: 0.92rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class='bg-wrap'>
+        <img class='bg' src='./signIn.png'>
+    </div>
+    <div class='shadow-main'></div>
+    <div class='main'></div>
+    <aside class='aside-left a-5-6'></aside>
+    <aside class='aside-left a-15-16'></aside>
+    <aside class='aside-left a-25-26'></aside>
+    <aside class='aside-right a-10-11'></aside>
+    <aside class='aside-right a-20-21'></aside>
+    <aside class='aside-right a-30-31'></aside>
+    <script>
+        let month = new Date().getMonth() + 1,
+            arr = [],
+            row1 = row2 = row3 = row4 = row5 = row6 = row7 = ''
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            for (let i = 1; i < 32; i++) {
+                arr.push(i);
+            }
+        } else if (month == 2) {
+            let year = new Date().getFullYear(),
+                len = 0;
+            if (year % 4 === 0) {
+                len = 29;
+                $('.bg').src = './signIn-29.png';
+            } else {
+                len = 28;
+                $('.bg').src = './signIn-28.png';
+            }
+            for (let i = 1; i < len + 1; i++) {
+                arr.push(i);
+            }
+        } else {
+            $('.bg').src = './signIn-30.png';
+            for (let i = 1; i < 31; i++) {
+                arr.push(i);
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            let month = new Date().getMonth() + 1,
+                days = arr[i];
+            fmonth = month < 10 ? `0${month}` : month;
+            fdays = days < 10 ? `0${days}` : days;
+            if (i < 5) {
+                row1 +=
+                    `<div class='item-wrap'>
+                    
+                            <div class='sign'>
+                                <div class='mask'>
+                                    <div class='flag'>已签到</div>
+                                </div>
+                                <div class='active'>
+                                    <div class='active-days'>${days}</div>
+                                    <div class='active-sign'>签到</div>
+                                </div>
+                                <img class='light' src='./light.png'>
+                                <span class='normal-date'>${days}</span>
+                            </div>
+                            <div class='triangle'>
+                                <div class='mask t-mask'></div>
+                            </div>
+                            <div class='item'>${fmonth}-${fdays}</div>
+                            <div class='block'></div>
+                    </div>`
+            } else if (i >= 5 && i < 10) {
+                row2 +=
+                    `<div class='item-wrap'>
+                    
+                            <div class='sign'>
+                                <div class='mask'>
+                                    <div class='flag'>已签到</div>
+                                </div>
+                                <div class='active'>
+                                    <div class='active-days'>${days}</div>
+                                    <div class='active-sign'>签到</div>
+                                </div>
+                                <img class='light' src='./light.png'>
+                                <span class='normal-date'>${days}</span>
+                            </div>
+                            <div class='triangle'>
+                                <div class='mask t-mask'></div>
+                            </div>
+                            <div class='item'>${fmonth}-${fdays}</div>
+                            <div class='block'></div>
+                    </div>`
+            } else if (i >= 10 && i < 15) {
+                row3 +=
+                    `<div class='item-wrap'>
+                    
+                            <div class='sign'>
+                                <div class='mask'>
+                                    <div class='flag'>已签到</div>
+                                </div>
+                                <div class='active'>
+                                    <div class='active-days'>${days}</div>
+                                    <div class='active-sign'>签到</div>
+                                </div>
+                                <img class='light' src='./light.png'>
+                                <span class='normal-date'>${days}</span>
+                            </div>
+                            <div class='triangle'>
+                                <div class='mask t-mask'></div>
+                            </div>
+                            <div class='item'>${fmonth}-${fdays}</div>
+                            <div class='block'></div>
+                    </div>`
+            } else if (i >= 15 && i < 20) {
+                row4 +=
+                    `<div class='item-wrap'>
+                    
+                            <div class='sign'>
+                                <div class='mask'>
+                                    <div class='flag'>已签到</div>
+                                </div>
+                                <div class='active'>
+                                    <div class='active-days'>${days}</div>
+                                    <div class='active-sign'>签到</div>
+                                </div>
+                                <img class='light' src='./light.png'>
+                                <span class='normal-date'>${days}</span>
+                            </div>
+                            <div class='triangle'>
+                                <div class='mask t-mask'></div>
+                            </div>
+                            <div class='item'>${fmonth}-${fdays}</div>
+                            <div class='block'></div>
+                    </div>`
+            } else if (i >= 20 && i < 25) {
+                row5 +=
+                    `<div class='item-wrap'>
+                    
+                            <div class='sign'>
+                                <div class='mask'>
+                                    <div class='flag'>已签到</div>
+                                </div>
+                                <div class='active'>
+                                    <div class='active-days'>${days}</div>
+                                    <div class='active-sign'>签到</div>
+                                </div>
+                                <img class='light' src='./light.png'>
+                                <span class='normal-date'>${days}</span>
+                            </div>
+                            <div class='triangle'>
+                                <div class='mask t-mask'></div>
+                            </div>
+                            <div class='item'>${fmonth}-${fdays}</div>
+                            <div class='block'></div>
+                    </div>`
+            } else if (i >= 25 && i < 30) {
+                row6 +=
+                    `<div class='item-wrap'>
+                    
+                            <div class='sign'>
+                                <div class='mask'>
+                                    <div class='flag'>已签到</div>
+                                </div>
+                                <div class='active'>
+                                    <div class='active-days'>${days}</div>
+                                    <div class='active-sign'>签到</div>
+                                </div>
+                                <img class='light' src='./light.png'>
+                                <span class='normal-date'>${days}</span>
+                            </div>
+                            <div class='triangle'>
+                                <div class='mask t-mask'></div>
+                            </div>
+                            <div class='item'>${fmonth}-${fdays}</div>
+                            <div class='block'></div>
+                    </div>`
+            } else {
+                row7 +=
+                    `<div class='item-wrap'>
+                    
+                            <div class='sign'>
+                                <div class='mask'>
+                                    <div class='flag'>已签到</div>
+                                </div>
+                                <div class='active'>
+                                    <div class='active-days'>${days}</div>
+                                    <div class='active-sign'>签到</div>
+                                </div>
+                                <img class='light' src='./light.png'>
+                                <span class='normal-date'>${days}</span>
+                            </div>
+                            <div class='triangle'>
+                                <div class='mask t-mask'></div>
+                            </div>
+                            <div class='item'>${fmonth}-${fdays}</div>
+                            <div class='block'></div>
+                    </div>`
+            }
+        }
+        for (let i = 0; i < 7; i++) {
+            let div = document.createElement('div');
+            div.className = `row${i+1}`;
+            div.classList.add('row');
+            $('.main').append(div);
+        };
+        $('.row1').append(row1);
+        $('.row2').append(row2);
+        $('.row3').append(row3);
+        $('.row4').append(row4);
+        $('.row5').append(row5);
+        $('.row6').append(row6);
+        $('.row7').append(row7);
+
+        let shadowDiv = $('.main').html();
+        $('.shadow-main').append(shadowDiv);
+
+        // mock 已签到日期
+        let mock = [1, 2, 3, 4, 5, 6, 7, 20, 21, 25];
+        //拐角 色块定位
+        let wid = $('.main').offset().left,
+            T = $('.main').offset().top;
+        $('aside').css({
+            width: wid,
+            height: '1.8rem'
+        });
+        $('.aside-left').each((i, v) => {
+            let height = $(v).height();
+            $(v).css({
+                top: T + i * height
+            })
+        })
+        $('.aside-right').each((i, v) => {
+            let height = $(v).height();
+            $(v).css({
+                top: (T + (i + 1) * height) * 0.9
+            })
+        })
+        let today = new Date().getDate();
+        $(".main .item-wrap").each((i, v) => {
+            if (i + 1 === today) {
+                $(v).children('.sign').find('.normal-date').css('display', 'none');
+                $(v).find('.active').css('display', 'block');
+                $(v).find('.active-sign').click(() => {
+                    if (today === 6 && mock.indexOf(5) != -1) {
+                        $('.a-5-6').css('background-color', '#ffcc00');
+                    };
+                    if (today === 11 && mock.indexOf(10) != -1) {
+                        $('.a-11-10').css('background-color', '#ffcc00');
+                    };
+                    if (today === 16 && mock.indexOf(15) != -1) {
+                        $('.a-15-16').css('background-color', '#ffcc00');
+                    };
+                    if (today === 21 && mock.indexOf(20) != -1) {
+                        $('.a-20-21').css('background-color', '#ffcc00');
+                    };
+                    if (today === 26 && mock.indexOf(25) != -1) {
+                        $('.a-25-26').css('background-color', '#ffcc00');
+                    };
+                    if (today === 31 && mock.indexOf(30) != -1) {
+                        $('.a-30-31').css('background-color', '#ffcc00');
+                    };
+                    $(v).find('.active').hide();
+                    $(v).find('.mask').show();
+                    $(v).find('.flag').text('已签到').css('color', '#fff');
+                    $('.shadow-main .item-wrap').each((j, v) => {
+                        if (j === i) {
+                            $(v).css('background-color', '#ffcc00');
+                        }
+                    });
+                });
+            };
+            if (i + 1 <= today) {
+                if (mock.indexOf(i + 1) != -1) {
+                    $(v).find('.mask').show();
+                    $(v).find('.active').hide();
+                    $('.shadow-main .item-wrap').each((j, v) => {
+                        if (j === i) {
+                            $(v).css('background-color', '#ffcc00');
+                        }
+                    });
+                    if (mock.indexOf(5) != -1 && mock.indexOf(6) != -1) {
+                        $('.a-5-6').css('background-color', '#ffcc00');
+                    };
+                    if (mock.indexOf(10) != -1 && mock.indexOf(11) != -1) {
+                        $('.a-10-11').css('background-color', '#ffcc00');
+                    };
+                    if (mock.indexOf(15) != -1 && mock.indexOf(16) != -1) {
+                        $('.a-15-16').css('background-color', '#ffcc00');
+                    };
+                    if (mock.indexOf(20) != -1 && mock.indexOf(21) != -1) {
+                        $('.a-20-21').css('background-color', '#ffcc00');
+                    };
+                    if (mock.indexOf(25) != -1 && mock.indexOf(26) != -1) {
+                        $('.a-25-26').css('background-color', '#ffcc00');
+                    };
+                    if (mock.indexOf(30) != -1 && mock.indexOf(31) != -1) {
+                        $('.a-30-31').css('background-color', '#ffcc00');
+                    };
+                } else {
+                    $(v).find('.mask').show().find('.flag').text('未签到').css('color', '#22660c');
+                }
+                if (mock.indexOf(today) == -1 && i + 1 == today) {
+                    console.log(i + 1)
+                    $(v).find('.mask').hide();
+                    $(v).find('.active').show();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

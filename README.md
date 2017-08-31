@@ -5,7 +5,7 @@
 
 ![Image text](https://raw.githubusercontent.com/w3313003/signIN/master/img-info/pic.png)
 
-通过此处控制日期显示
+通过此数组控制签到日期
 
 ![Image text](https://raw.githubusercontent.com/w3313003/signIN/master/img-info/mock.png)
 

@@ -254,9 +254,11 @@
             color: #666;
             line-height: 24px;
         }
-        .record{
+
+        .record {
             margin-top: 30px
         }
+
         .r-title {
             font-size: 20px;
             color: #e53c1d;
@@ -294,74 +296,108 @@
             text-align: right;
             color: #666;
         }
+
+        .navbar {
+            border-top: 1px solid #ccc;
+            background: #fff;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            font-size: 20px;
+        }
+
+        .navbar div {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sign {
+            border-right: 1px solid #ccc;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 95vh;
+            overflow: scroll;
+        }
     </style>
 </head>
 
 <body>
-    <div class='top'>
-        <img src='./raffle_01.jpg' />
-    </div>
-    <div id="lottery">
-        <div class="block  lottery-unit-0">
-            <div class="mask"></div>
+    <div class='wrap'>
+        <div class='top'>
+            <img src='./raffle_01.jpg' />
         </div>
-        <div class="block  lottery-unit-1">
-            <div class="mask"></div>
-        </div>
-        <div class="block  lottery-unit-2">
-            <div class="mask"></div>
-        </div>
-        <div class="block lottery-unit-7">
-            <div class="mask"></div>
-        </div>
-        <div class="btn">
-            <div class='raffle-btn'>
-                <img src="./btn.png" alt="">
+        <div id="lottery">
+            <div class="block  lottery-unit-0">
+                <div class="mask"></div>
+            </div>
+            <div class="block  lottery-unit-1">
+                <div class="mask"></div>
+            </div>
+            <div class="block  lottery-unit-2">
+                <div class="mask"></div>
+            </div>
+            <div class="block lottery-unit-7">
+                <div class="mask"></div>
+            </div>
+            <div class="btn">
+                <div class='raffle-btn'>
+                    <img src="./btn.png" alt="">
+                </div>
+            </div>
+            <div class="block lottery-unit-3">
+                <div class="mask"></div>
+            </div>
+            <div class="block lottery-unit-6">
+                <div class="mask"></div>
+            </div>
+            <div class="block lottery-unit-5">
+                <div class="mask"></div>
+            </div>
+            <div class="block lottery-unit-4">
+                <div class="mask"></div>
             </div>
         </div>
-        <div class="block lottery-unit-3">
-            <div class="mask"></div>
-        </div>
-        <div class="block lottery-unit-6">
-            <div class="mask"></div>
-        </div>
-        <div class="block lottery-unit-5">
-            <div class="mask"></div>
-        </div>
-        <div class="block lottery-unit-4">
-            <div class="mask"></div>
-        </div>
-    </div>
-    <div class='rule-wrap'>
-        <div class='rule'>
-            <div class='title'>活动规则</div>
-            <p>1、活动时间：2017-7-23至2017-8-23。</p>
-            <p>2、活动期间每个用户只有一次抽奖机会。</p>
-            <p>3、参与抽奖必须先关注保利客服公众号。</p>
-            <p>4、用户如抽中实物奖品后，需联系微客服，一遍领取奖品。 如用户抽到现金红包或优惠券，系统将会自动发放。
-            </p>
-        </div>
-        <div class='record'>
-            <div class='r-title'>中奖纪录</div>
-            <ul class='r-ul'>
-                <li>
-                    <img src='./gift.png' style="transform:scale(0.7)">
-                    <div class='content'>获得5元优惠券</div>
-                    <div class='time'> 2017/08/28 10:00:25</div>
-                </li>
-                <li>
-                    <img src='./gift.png' style="transform:scale(0.7)">
-                    <div class='content'>获得5元优惠券</div>
-                    <div class='time'> 2017/08/28 10:00:25</div>
-                </li>
-                <li><img src='./gift.png' style="transform:scale(0.7)">
-                    <div class='content'>获得5元优惠券</div>
-                    <div class='time'> 2017/08/28 10:00:25</div>
-                </li>
-            </ul>
-        </div>
-    </div>
+        <div class='rule-wrap'>
+            <div class='rule'>
+                <div class='title'>活动规则</div>
+                <p>1、活动时间：2017-7-23至2017-8-23。</p>
+                <p>2、活动期间每个用户只有一次抽奖机会。</p>
+                <p>3、参与抽奖必须先关注保利客服公众号。</p>
+                <p>4、用户如抽中实物奖品后，需联系微客服，一遍领取奖品。 如用户抽到现金红包或优惠券，系统将会自动发放。
+                </p>
+            </div>
+            <div class='record'>
+                <div class='r-title'>中奖纪录</div>
+                <ul class='r-ul'>
+                    <li>
+                        <img src='./gift.png' style="transform:scale(0.7)">
+                        <div class='content'>获得5元优惠券</div>
+                        <div class='time'> 2017/08/28 10:00:25</div>
+                    </li>
+                    <li>
+                        <img src='./gift.png' style="transform:scale(0.7)">
+                        <div class='content'>获得5元优惠券</div>
+                        <div class='time'> 2017/08/28 10:00:25</div>
+                    </li>
+                    <li><img src='./gift.png' style="transform:scale(0.7)">
+                        <div class='content'>获得5元优惠券</div>
+                        <div class='time'> 2017/08/28 10:00:25</div>
+                    </li>
+                </ul>
+            </div>
 
+        </div>
+
+    </div>
+    <div class='navbar'>
+        <div class='sign'>
+            <a>签到</a></div>
+        <div><a>个人中心</a></div>
+    </div>
 </body>
 <script type="text/javascript">
     var lottery = {
